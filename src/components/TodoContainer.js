@@ -24,6 +24,20 @@ class TodoContainer extends React.Component {
         ]
        };
 
+       handleChange = id => {
+        this.setState(prevState => ({
+          todos: prevState.todos.map(todo => {
+            if (todo.id === id) {
+              return {
+                ...todo,
+                completed: !todo.completed,
+              }
+            }
+            return todo
+          }),
+        }))
+      };
+
        addTodoItem = title => {
         const newTodo = {
           id: 4,
@@ -41,7 +55,7 @@ class TodoContainer extends React.Component {
       <div>
         <Header />
         <InputTodo />
-        <TodosList todos={this.state.todos} />
+        <TodosList todos={this.state.todos} handleChangeProps={this.handleChange} />
      </div>
     );
   }
