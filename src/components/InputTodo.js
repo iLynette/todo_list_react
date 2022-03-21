@@ -16,8 +16,7 @@ class InputTodo extends Component {
     this.setState({
       title: ""
     });
-  };
-  
+  };  
 
   render() {
     return (
