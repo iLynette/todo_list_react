@@ -1,6 +1,7 @@
 import React from "react";
 import TodosList from "./TodosList";
 import Header from "./Header";
+import InputTodo from "./InputTodo";
 
 class TodoContainer extends React.Component {
     state = {
@@ -22,13 +23,24 @@ class TodoContainer extends React.Component {
           }
         ]
        };
+
+       addTodoItem = title => {
+        const newTodo = {
+          id: 4,
+          title: title,
+          completed: false
+        };
+        this.setState({
+          todos: [...this.state.todos, newTodo]
+        });
+      };
+      
+
   render() {
-    // handleChange = () => {
-    //     console.log("clicked");
-    // };
     return (
       <div>
         <Header />
+        <InputTodo />
         <TodosList todos={this.state.todos} />
      </div>
     );
