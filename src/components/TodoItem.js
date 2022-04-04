@@ -50,7 +50,7 @@ class TodoItem extends React.Component {
                 onChange={() => this.props.handleChangeProps(id)}
               />
               <button onClick={() => this.props.deleteTodoProps(id)}>
-                <FaTrash />
+                <FaTrash style={{ color: "orangered", fontSize: "16px" }} />
               </button>
               <span style={completed ? completedStyle : null}>
                 {title}
